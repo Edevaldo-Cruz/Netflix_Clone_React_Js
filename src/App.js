@@ -1,16 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Tmdb from "./Tmdb";
-
+import MovieRow from "./components/MovieRow.js"
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
+
+  const [movieList, setMovieList] = useState ([]);
+
   useEffect(() => {
     const loadAll = async () => {
       let list = await Tmdb.getHomeList();
-      console.log(list);
+      setMovieList(list);
     };
 
     loadAll();
   }, []);
 
-  return <div>ola mundo!</div>;
+  return (
+  <div className="page">
+    <section className ="list">
+      {movieList.map((item, key)=>(
+        <MovieRow key={key} title={item} items={item.items}/>
+      ))}
+    </section>
+    
+  </div>
+  );
 };
