@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 
 
 import "./App.css";
-import FeaturedMovie from "./components/FeaturedMovie";
 import Tmdb from "./Tmdb";
+import FeaturedMovie from "./components/FeaturedMovie";
 import MovieRow from "./components/MovieRow.js";
+import Header from "./components/Header";
 
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -29,6 +30,8 @@ export default () => {
 
   return (
     <div className="page">
+
+      <Header/>
 
       {featuredData &&
       <FeaturedMovie item={featuredData}/>
