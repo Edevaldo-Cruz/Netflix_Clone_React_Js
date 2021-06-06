@@ -4,8 +4,6 @@ import InfoIcon from "@material-ui/icons/Info";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ({ item }) => {
-  console.log(item);
-
   let firstDate = new Date(item.first_air_date);
   let genres = [];
   for (let i in item.genres) {
@@ -38,7 +36,7 @@ export default ({ item }) => {
           </div>
           <div className="featured--description">{description}</div>
           <div className="featured--buttons">
-            <a href={`/watch/${item.id}`} className="featured--watchbutton">
+            <a href={`${item.id}`} className="featured--watchbutton">
               ► Assistir
             </a>
 
@@ -47,7 +45,7 @@ export default ({ item }) => {
               className="featuredd--mylistbutton"
             >
               {" "}
-              <InfoIcon style={{ fontSize: 20 }} /> Mais Informações
+              <InfoIcon style={{ fontSize: 20, alignItems: "center" }} /> Mais Informações
             </a>
           </div>
           <div className="featured--genres">

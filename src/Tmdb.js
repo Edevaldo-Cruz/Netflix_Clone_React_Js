@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions */
 const API_KEY = "2bf7d1cf26f8b2580564e8b62ca321d3";
 const API_BASE = "https://api.themoviedb.org/3";
 
@@ -14,7 +13,7 @@ export default {
     return [
       {
         slug: "originals",
-        title: "Originais do Netflix",
+        title: "Destaques",
         items: await basicFetch(
           `/discover/tv?with_network=213&language=pt-BR&api_key=${API_KEY}`
         ),

@@ -50,23 +50,31 @@ export default () => {
       {featuredData && <FeaturedMovie item={featuredData} />}
 
       <section className="list">
-        {movieList.map((item, key) => (
-          <MovieRow key={key} title={item.title} items={item.items} />
+        {movieList.map((item, key, homepages) => (
+          <MovieRow
+            key={key}
+            title={item.title}
+            items={item.items}
+            homepages={item.homepages}
+          />
         ))}
       </section>
 
       <footer>
-        Site baseado na Netflix para fins didaticos. Direito de imagens Netflix
-        e dados coletados no sites
+        Site baseado na Netflix para fins didáticos. Direito de imagens para
+        Netflix e dados coletados no site
         <a href="https://www.themoviedb.org/?language=pt-BR">Themoviedb.org</a>
-        <br /> Utilizado API do TMDB, React, HTML e CSS. <br />
+        <br /> Utilizando API do TMDB, React, HTML e CSS. <br />
         <a href="https://www.linkedin.com/in/edevaldo-cruz-8586a8a4/">
           Edevaldo Cruz Antonio
         </a>
       </footer>
       {movieList.length <= 0 && (
         <div className="loading">
-          <img src="https://media.wired.com/photos/592744d3f3e2356fd800bf00/master/w_2560%2Cc_limit/Netflix_LoadTime.gif" />
+          <img
+            src="https://media.wired.com/photos/592744d3f3e2356fd800bf00/master/w_2560%2Cc_limit/Netflix_LoadTime.gif"
+            alt="Carregando"
+          />
         </div>
       )}
     </div>

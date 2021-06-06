@@ -18,9 +18,9 @@ export default ({ title, items }) => {
   const handleRightArrow = () => {
     let x = scrollX - Math.round(window.innerWidth / 4);
     let listW = items.results.length * 150;
-      if((window.innerWidth - listW) > x) {
-        x = (window.innerWidth - listW) - 60;
-      }
+    if (window.innerWidth - listW > x) {
+      x = window.innerWidth - listW - 60;
+    }
     setSrcollX(x);
   };
 
@@ -44,16 +44,14 @@ export default ({ title, items }) => {
           {items.results.length > 0 &&
             items.results.map((item, key) => (
               <div key={key} className="movieRow--item">
-                <div>
-                  <a
-                    href={`https://www.googleapis.com/youtube/v3/search/${item.name}`}
-                  >
-                    <img
-                      src={`https://image.tmdb.org/t/p/w300${item.poster_path}`}
-                      alt={item.original_title}
-                    />
-                  </a>
-                </div>
+                <a
+                  href={`https://www.youtube.com/results?search_query=trailer${item.name}`}
+                >
+                  <img
+                    src={`https://image.tmdb.org/t/p/w300${item.poster_path}`}
+                    alt={item.original_title}
+                  />
+                </a>
               </div>
             ))}
         </div>
