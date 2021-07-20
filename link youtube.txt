@@ -2,3 +2,13 @@ https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyBMfMu-OIwJQ9
 
 
 www.youtube.com/embed/UMLR5W3-opQ
+
+
+como pegar informação do json? variavel?
+como esconder uma chave?
+
+code http
+https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
+
+
+$.items[0].id.videoId

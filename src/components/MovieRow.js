@@ -41,11 +41,13 @@ export default ({ title, items }) => {
             width: items.results.length * 250,
           }}
         >
+          {console.log(items.results)}
           {items.results.length > 0 &&
             items.results.map((item, key) => (
               <div key={key} className="movieRow--item">
                 <a
-                  href={`https://www.youtube.com/results?search_query=trailer${item.name}`}
+                  //href={`https://www.youtube.com/results?search_query=trailer${item.name}`}
+                  href={`https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyBMfMu-OIwJQ9_5lG70ky4Zviyuix-sAaM&type=video&q=${item.name}`}
                 >
                   <img
                     src={`https://image.tmdb.org/t/p/w300${item.poster_path}`}
